@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="indexstyle.css" />
+    <title>Cards</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <div class="card" id="card1">
+      <div
+        class="card-image"
+        style="
+          background: url('images/hqdefault.jpg');
+          background-position: center;
+          background-size: cover;
+        "
+      ></div>
+      <div class="card-text">
+        <span class="date" style="color: orange">Attack</span>
+        <h2>Fire Ball</h2>
+        <p>Can be used THRICE</p>
+        <p>Destroy 100HP more on Luminous Spiral</p>
+      </div>
+      <div
+        class="card-stats"
+        style="background: linear-gradient(to right, #f12711, #f5af19)"
+      >
+        <div class="stat border">
+          <div class="value">300</div>
+          <div class="type">Damage</div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="download-btn"
+      onclick="downloadImage('card1', 'fire_ball.png')"
+    >
+      Download
+    </button>
+
+    <div class="card" id="card2">
+      <div
+        class="card-image"
+        style="
+          background: url('images/images.png');
+          background-position: center;
+          background-size: cover;
+        "
+      ></div>
+      <div class="card-text">
+        <span class="date" style="color: skyblue">Attack</span>
+        <h2>Ice Machine Gun</h2>
+        <p>Can be used THRICE</p>
+        <p>Destroy 100HP more on Cold Terrain</p>
+      </div>
+      <div
+        class="card-stats"
+        style="background: linear-gradient(to right, #00c6ff, #0072ff)"
+      >
+        <div class="stat border">
+          <div class="value">250</div>
+          <div class="type">Damage</div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="download-btn"
+      onclick="downloadImage('card2', 'ice_machine_gun.png')"
+    >
+      Download
+    </button>
+
+    <div class="card" id="card3">
+      <div
+        class="card-image"
+        style="
+          background: url('images/war.png');
+          background-position: center;
+          background-size: cover;
+        "
+      ></div>
+      <div class="card-text">
+        <span class="date" style="color: pink">Attack</span>
+        <h2>Warcraft</h2>
+        <p>Can be used TWICE</p>
+        <p>Destroy 100HP more when on Terra Firma</p>
+      </div>
+      <div
+        class="card-stats"
+        style="background: linear-gradient(to right, #7303c0, #ec38bc)"
+      >
+        <div class="stat border">
+          <div class="value">500</div>
+          <div class="type">Damage</div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="download-btn"
+      onclick="downloadImage('card3', 'warcraft.png')"
+    >
+      Download
+    </button>
+
+    <div class="card" id="card4">
+      <div
+        class="card-image"
+        style="
+          background: url('images/mshower.png');
+          background-position: center;
+          background-size: cover;
+        "
+      ></div>
+      <div class="card-text">
+        <span class="date" style="color: tomato">Attack</span>
+        <h2>Meteor Shower</h2>
+        <p>Can be used THRICE</p>
+        <p>Destroy 100HP more on Winds Terrain</p>
+      </div>
+      <div
+        class="card-stats"
+        style="background: linear-gradient(to right, #ff416c, red)"
+      >
+        <div class="stat border">
+          <div class="value">300</div>
+          <div class="type">Damage</div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="download-btn"
+      onclick="downloadImage('card4', 'meteor_shower.png')"
+    >
+      Download
+    </button>
+
+    <div class="card" id="card5">
+      <div
+        class="card-image"
+        style="
+          background: url('images/shield.png');
+          background-position: center;
+          background-size: cover;
+        "
+      ></div>
+      <div class="card-text">
+        <span class="date" style="color: #8e2de2">Defense</span>
+        <h2>Energy Shield</h2>
+        <p>Can be used TWICE</p>
+      </div>
+      <div
+        class="card-stats"
+        style="background: linear-gradient(to right, #8e2de2, #4a00e0)"
+      >
+        <div class="stat border">
+          <div class="value">500</div>
+          <div class="type">Health Point</div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="download-btn"
+      onclick="downloadImage('card5', 'energy_shield.png')"
+    >
+      Download
+    </button>
+
+    <script>
+      function downloadImage(cardId, filename) {
+        const card = document.getElementById(cardId);
+
+        html2canvas(card).then((canvas) => {
+          const link = document.createElement("a");
+          link.download = filename;
+          link.href = canvas.toDataURL("image/png");
+          link.click();
+        });
+      }
+    </script>
+  </body>
+</html>
